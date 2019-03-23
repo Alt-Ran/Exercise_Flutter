@@ -1,4 +1,4 @@
-name: shopping_list
+name: esercizi
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -41,8 +41,6 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-    - assets/data/shoppingList.json
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
