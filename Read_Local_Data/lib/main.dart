@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'data/service.dart';
 import 'package:esercizi/interface/shopping_interface.dart';
 
-void main() async{
-  await loadCrossword();
-  runApp(new MyApp());
-}
+// avvio l'app richiamando la classe MyApp e salvo il risultato di
+// loadCrossword() nella variabile post
+void main() => runApp(MyApp(post: loadCrossword()));
 
 class MyApp extends StatelessWidget {
-  shopping shoppingList =  getJson();
+  final Future<shopping> post;
+
+  // constructor MyApp
+  MyApp({Key key, this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,18 @@ class MyApp extends StatelessWidget {
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
-          child: new Center(
-              child:  Text(shoppingList.item[1].name),
-        ),
+          child: FutureBuilder<shopping>(
+            future: post,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data.item[0].name);
+              }
+
+              // creo un loader fino a quando post non riceve i dati
+              // dal JSON.
+              return CircularProgressIndicator();
+            },
+          ),
         ),
       ),
     );

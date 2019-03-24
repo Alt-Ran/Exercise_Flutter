@@ -4,7 +4,6 @@ import 'dart:convert';
 // richiamo l'interfaccia
 import 'package:esercizi/interface/shopping_interface.dart';
 
-shopping crossword;
 
 Future<String> _loadCrosswordAsset() async {
   return await rootBundle.loadString('assets/data/List.json');
@@ -28,11 +27,9 @@ shopping _parseJsonForCrossword(String jsonString) {
   return new shopping(items);
 }
 
-Future loadCrossword() async {
+Future<shopping> loadCrossword() async {
   String jsonCrossword = await _loadCrosswordAsset();
-  crossword = _parseJsonForCrossword(jsonCrossword);
-}
+  shopping crossword = _parseJsonForCrossword(jsonCrossword);
 
-shopping getJson(){
   return crossword;
 }
