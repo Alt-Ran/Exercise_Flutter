@@ -1,0 +1,46 @@
+{
+"shopping_list": [
+  {
+    "id": 1,
+    "name": "List 01",
+    "across": [
+      {
+        "number": 1,
+        "word": "TEL"
+      },
+      {
+        "number": 3,
+        "word": "FUCK"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "List 02",
+    "across": [
+      {
+        "number": 2,
+        "word": "TSL"
+      },
+      {
+        "number": 4,
+        "word": "PAP"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "List 03",
+    "across": [
+      {
+        "number": 3,
+        "word": "TTT"
+      },
+      {
+        "number": 5,
+        "word": "DICK"
+      }
+    ]
+  }
+]
+}
